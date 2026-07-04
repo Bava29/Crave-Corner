@@ -298,6 +298,35 @@ rtlButtons.forEach(button => {
 
 });
 
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = themeToggle.querySelector("i");
+
+themeToggle.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+
+    } else {
+
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
+
+    }
+
+});
+
+const rtlBtn = document.getElementById("rtl-toggle");
+
+if (rtlBtn) {
+    rtlBtn.addEventListener("click", () => {
+        document.body.classList.toggle("rtl");
+    });
+}
+
 //book party counter
 
 const counters = document.querySelectorAll(".counter");

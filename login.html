@@ -50,185 +50,168 @@
 
 
 
-    <!DOCTYPE html>
-    <html lang="en">
+    <!---------------- LOGIN ---------------->
 
-    <head>
+    <section class="login-page">
 
-        <meta charset="UTF-8">
+        <div class="auth-page-controls">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <button id="theme-toggle" class="control-btn" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
 
-        <title>Login | Crave Corner</title>
+            <button id="rtl-toggle" class="control-btn" aria-label="Toggle RTL">
+                <i class="fa-solid fa-right-left"></i>
+            </button>
 
-        <!-- Google Font -->
+        </div>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <div class="login-card">
 
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-            rel="stylesheet">
+            <!-- Logo -->
 
-        <!-- Font Awesome -->
+            <a href="index.html" class="login-logo">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+                <img src="images/logo.png" alt="Crave Corner">
 
-        <!-- CSS -->
+            </a>
 
-        <link rel="stylesheet" href="css/style.css">
+            <span class="login-tag">
 
-    </head>
+                Welcome Back
 
-    <body>
+            </span>
 
-        <!---------------- LOGIN ---------------->
+            <h1>
 
-        <section class="login-page">
+                Sign In To Your Account
 
-            <div class="login-card">
+            </h1>
 
-                <!-- Logo -->
+            <p>
 
-                <a href="index.html" class="login-logo">
+                Login to continue your sweet journey with Crave Corner.
 
-                    <img src="images/logo.png" alt="Crave Corner">
+            </p>
 
-                </a>
+            <!-- Form -->
 
-                <span class="login-tag">
+            <form>
 
-                    Welcome Back
+                <div class="input-box">
 
-                </span>
+                    <label>Email Address</label>
 
-                <h1>
+                    <input type="email" placeholder="Enter your email">
 
-                    Sign In To Your Account
+                </div>
 
-                </h1>
+                <div class="input-box password-box">
 
-                <p>
+                    <label>Password</label>
 
-                    Login to continue your sweet journey with Crave Corner.
+                    <input type="password" id="password" placeholder="Enter your password">
 
-                </p>
+                    <button type="button" class="toggle-password">
 
-                <!-- Form -->
-
-                <form>
-
-                    <div class="input-box">
-
-                        <label>Email Address</label>
-
-                        <input type="email" placeholder="Enter your email">
-
-                    </div>
-
-                    <div class="input-box password-box">
-
-                        <label>Password</label>
-
-                        <input type="password" id="password" placeholder="Enter your password">
-
-                        <button type="button" class="toggle-password">
-
-                            <i class="fa-solid fa-eye"></i>
-
-                        </button>
-
-                    </div>
-
-                    <div class="login-options">
-
-                        <label class="remember">
-
-                            <input type="checkbox">
-
-                            Remember Me
-
-                        </label>
-
-                        <a href="forgot-password.html">
-
-                            Forgot Password?
-
-                        </a>
-
-                    </div>
-
-                    <button class="primary-btn login-btn">
-
-                        Login
+                        <i class="fa-solid fa-eye"></i>
 
                     </button>
 
-                </form>
+                </div>
 
-                <!-- Divider -->
+                <div class="login-options">
 
-                <div class="divider">
+                    <label class="remember">
 
-                    <span>Or Continue With</span>
+                        <input type="checkbox">
+
+                        Remember Me
+
+                    </label>
+
+                    <a href="forgot-password.html">
+
+                        Forgot Password?
+
+                    </a>
 
                 </div>
 
-                <!-- Social Login -->
+                <button class="primary-btn login-btn">
 
-                <div class="social-login">
+                    Login
 
-                    <a href="#" class="social-btn google">
+                </button>
 
-                        <img src="images/google-logo.svg" alt="Google">
+            </form>
 
-                    </a>
+            <!-- Divider -->
 
-                    <a href="#" class="social-btn facebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
+            <div class="divider">
 
-                    <a href="#" class="social-btn apple">
-                        <i class="fa-brands fa-apple"></i>
-                    </a>
-
-                    <a href="#" class="social-btn x">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-
-                </div>
-                <!-- Bottom -->
-
-                <div class="login-footer">
-
-                    <p>
-
-                        Don't have an account?
-
-                        <a href="register.html">
-
-                            Create Account
-
-                        </a>
-
-                    </p>
-
-                </div>
+                <span>Or Continue With</span>
 
             </div>
 
-        </section>
+            <!-- Social Login -->
+
+            <div class="social-login">
+
+                <a href="#" class="social-btn google">
+
+                    <img src="images/google-logo.svg" alt="Google">
+
+                </a>
+
+                <a href="#" class="social-btn facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#" class="social-btn apple">
+                    <i class="fa-brands fa-apple"></i>
+                </a>
+
+                <a href="#" class="social-btn x">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+            </div>
+            <!-- Bottom -->
+
+            <div class="login-footer">
+
+                <p>
+
+                    Don't have an account?
+
+                    <a href="register.html">
+
+                        Create Account
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
-        <script src="js/auth.js"></script>
-        <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
 
 
-    </body>
 
-    </html>
+
+</body>
+
+</html>

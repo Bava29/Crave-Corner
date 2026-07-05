@@ -9,6 +9,42 @@ if (menuToggle && navMenu) {
 
 }
 
+/*=========================================
+        SCROLL TO TOP
+=========================================*/
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 300) {
+
+        scrollTopBtn.classList.add("show");
+
+    } else {
+
+        scrollTopBtn.classList.remove("show");
+
+    }
+
+});
+
+scrollTopBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+/*=========================================
+        REVEAL ANIMATION
+=========================================*/
+
 window.addEventListener("DOMContentLoaded", () => {
 
     const revealElements = document.querySelectorAll(`
@@ -38,7 +74,10 @@ window.addEventListener("DOMContentLoaded", () => {
         .amenity-card,
         .about-cta-content,
         .menu-cta-content,
-        .celebration-banner-content
+        .celebration-banner-content,
+        .footer-column,
+        .newsletter,
+        .footer-bottom
     `);
 
     const observer = new IntersectionObserver((entries) => {
@@ -46,26 +85,36 @@ window.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
 
             if (entry.isIntersecting) {
+
                 entry.target.classList.add("show");
+
+                observer.unobserve(entry.target);
+
             }
 
         });
 
     }, {
+
         threshold: 0.15
+
     });
 
-    revealElements.forEach(el => observer.observe(el));
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
 
 });
 
-const dropdowns = document.querySelectorAll(".dropdown > a");
+const dropdowns = document.querySelectorAll(".nav-item.dropdown > a");
 
 dropdowns.forEach(item => {
 
     item.addEventListener("click", function (e) {
 
-        if (window.innerWidth <= 992) {
+        if (window.innerWidth <= 1199) {
 
             e.preventDefault();
 
@@ -80,6 +129,90 @@ dropdowns.forEach(item => {
 });
 
 
+/*=========================================
+        CELEBRATION COUNTER
+=========================================*/
+
+/*=========================================
+        COUNTER ANIMATION
+=========================================*/
+
+const counters = document.querySelectorAll(".counter");
+
+if (counters.length) {
+
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+
+        entries.forEach(entry => {
+
+            if (!entry.isIntersecting) return;
+
+            const counter = entry.target;
+
+            // Rating animation வேண்டாம்
+            if (counter.classList.contains("rating")) {
+                observer.unobserve(counter);
+                return;
+            }
+
+            const target = Number(counter.dataset.target);
+            const duration = 2000;
+            const startTime = performance.now();
+
+            function updateCounter(currentTime) {
+
+                const progress = Math.min((currentTime - startTime) / duration, 1);
+                const current = Math.floor(progress * target);
+
+                if (target >= 1000) {
+
+                    counter.textContent = `${Math.floor(current / 1000)}K+`;
+
+                } else {
+
+                    counter.textContent = `${current}+`;
+
+                }
+
+                if (progress < 1) {
+
+                    requestAnimationFrame(updateCounter);
+
+                } else {
+
+                    if (target >= 1000) {
+
+                        counter.textContent = `${target / 1000}K+`;
+
+                    } else {
+
+                        counter.textContent = `${target}+`;
+
+                    }
+
+                }
+
+            }
+
+            requestAnimationFrame(updateCounter);
+
+            observer.unobserve(counter);
+
+        });
+
+    }, {
+
+        threshold: 0.3
+
+    });
+
+    counters.forEach(counter => {
+
+        counterObserver.observe(counter);
+
+    });
+
+}
 
 /*==============================
         HERO SWIPER
@@ -327,92 +460,8 @@ if (rtlBtn) {
     });
 }
 
-//book party counter
-
-const counters = document.querySelectorAll(".counter");
-const statsSection = document.querySelector(".celebration-stats");
 
 
-let started = false;
-
-const observer = new IntersectionObserver((entries) => {
-
-    if (entries[0].isIntersecting && !started) {
-
-        started = true;
-
-        counters.forEach(counter => {
-
-            if (counter.classList.contains("rating")) return;
-
-            const target = +counter.dataset.target;
-
-            let count = 0;
-
-            const increment = target / 100;
-
-            function updateCounter() {
-
-                count += increment;
-
-                if (count < target) {
-
-                    if (target >= 1000) {
-
-                        counter.innerHTML = Math.ceil(count / 1000) + "K+";
-
-                    }
-
-                    else {
-
-                        counter.innerHTML = Math.ceil(count) + "+";
-
-                    }
-
-                    requestAnimationFrame(updateCounter);
-
-                }
-
-                else {
-
-                    if (target >= 1000) {
-
-                        if (target % 1000 === 0) {
-
-                            counter.innerHTML = (target / 1000) + "K+";
-
-                        }
-
-                        else {
-
-                            counter.innerHTML = target.toLocaleString() + "+";
-
-                        }
-
-                    }
-
-                    else {
-
-                        counter.innerHTML = target + "+";
-
-                    }
-
-                }
-
-            }
-
-            updateCounter();
-
-        });
-
-    }
-
-},
-    {
-        threshold: 0.4
-    });
-
-observer.observe(statsSection);
 
 const faqItems = document.querySelectorAll(".faq-item");
 
@@ -485,4 +534,5 @@ document.querySelectorAll(".toggle-password, .register-toggle-password, .registe
     });
 
 });
+
 

@@ -25688,3 +25688,195 @@ select,
     }
 
 }
+
+/*=========================================
+    iPad Mini (768px) - Floating Box Override
+=========================================*/
+
+@media (min-width:768px) and (max-width:991px) {
+
+    .experience-badge {
+
+        width: 180px !important;
+        min-height: 180px !important;
+        height: 180px !important;
+
+        padding: 18px 15px !important;
+
+        right: 15px !important;
+        bottom: 15px !important;
+
+        border-radius: 20px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+
+    }
+
+    .experience-badge-icon {
+
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 12px !important;
+
+    }
+
+    .experience-badge-icon i {
+
+        font-size: 18px !important;
+
+    }
+
+    .experience-badge h4 {
+
+        font-size: 20px !important;
+        margin-bottom: 5px !important;
+        line-height: 1.3 !important;
+
+    }
+
+    .experience-badge p {
+
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+
+    }
+
+}
+
+/*=========================================
+        FOOTER MOBILE LEFT ALIGN
+=========================================*/
+
+@media (max-width:576px) {
+
+    .footer-wrapper {
+
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 35px !important;
+
+    }
+
+    .footer-column {
+
+        width: 100%;
+        text-align: left !important;
+
+    }
+
+    .footer-logo {
+
+        display: block !important;
+        margin-bottom: 20px;
+
+    }
+
+    .footer-column p {
+
+        margin: 0 0 25px;
+        max-width: 100%;
+
+    }
+
+    /* Social Icons */
+
+    .footer-social {
+
+        display: flex;
+        justify-content: flex-start !important;
+        gap: 15px;
+
+    }
+
+    /* Lists */
+
+    .footer-column ul {
+
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+    }
+
+    .footer-column ul li {
+
+        margin-bottom: 16px;
+        text-align: left;
+
+    }
+
+    /* Contact Info */
+
+    .footer-column:last-child ul li {
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start !important;
+        gap: 12px;
+
+    }
+
+    .footer-column:last-child ul li i {
+
+        margin-top: 4px;
+        flex-shrink: 0;
+
+    }
+
+    /* Newsletter */
+
+    .newsletter {
+
+        text-align: left !important;
+        padding: 30px 20px;
+
+    }
+
+    .newsletter h3 {
+
+        text-align: left !important;
+
+    }
+
+    .newsletter form {
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+    }
+
+    .newsletter input,
+    .newsletter button {
+
+        width: 100%;
+
+    }
+
+    /* Footer Bottom */
+
+    .footer-bottom {
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        text-align: left !important;
+        gap: 15px;
+
+    }
+
+    .footer-links {
+
+        display: flex;
+        justify-content: flex-start !important;
+        flex-wrap: wrap;
+        gap: 20px;
+
+    }
+
+}

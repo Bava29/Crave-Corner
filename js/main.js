@@ -1,10 +1,23 @@
 const menuToggle = document.getElementById("menu-toggle");
+const menuClose = document.getElementById("menu-close");
 const navMenu = document.getElementById("nav-menu");
 
 if (menuToggle && navMenu) {
 
     menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
+
+        navMenu.classList.add("active");
+
+    });
+
+}
+
+if (menuClose && navMenu) {
+
+    menuClose.addEventListener("click", () => {
+
+        navMenu.classList.remove("active");
+
     });
 
 }
@@ -15,31 +28,34 @@ if (menuToggle && navMenu) {
 
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-window.addEventListener("scroll", () => {
+if (scrollTopBtn) {
 
-    if (window.scrollY > 300) {
+    window.addEventListener("scroll", () => {
 
-        scrollTopBtn.classList.add("show");
+        if (window.scrollY > 300) {
 
-    } else {
+            scrollTopBtn.classList.add("show");
 
-        scrollTopBtn.classList.remove("show");
+        } else {
 
-    }
+            scrollTopBtn.classList.remove("show");
 
-});
-
-scrollTopBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
+        }
 
     });
 
-});
+    scrollTopBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
 
 /*=========================================
         REVEAL ANIMATION
@@ -129,9 +145,6 @@ dropdowns.forEach(item => {
 });
 
 
-/*=========================================
-        CELEBRATION COUNTER
-=========================================*/
 
 /*=========================================
         COUNTER ANIMATION
@@ -218,164 +231,162 @@ if (counters.length) {
         HERO SWIPER
 ==============================*/
 
-const heroSwiper = new Swiper(".heroSwiper", {
+if (document.querySelector(".heroSwiper")) {
 
-    loop: true,
+    new Swiper(".heroSwiper", {
 
-    speed: 1000,
+        loop: true,
+        speed: 1000,
 
-    spaceBetween: 0,
+        autoplay: {
 
-    effect: "fade",
+            delay: 3500,
+            disableOnInteraction: false
 
-    fadeEffect: {
-        crossFade: true,
-    },
-
-    autoplay: {
-
-        delay: 3500,
-
-        disableOnInteraction: false,
-
-    },
-
-    pagination: {
-
-        el: ".swiper-pagination",
-
-        clickable: true,
-
-    },
-
-    navigation: {
-
-        nextEl: ".swiper-button-next",
-
-        prevEl: ".swiper-button-prev",
-
-    },
-
-});
-
-const treatSwiper = new Swiper(".treatSwiper", {
-
-    loop: true,
-
-    spaceBetween: 30,
-
-    autoplay: {
-
-        delay: 3000,
-
-        disableOnInteraction: false,
-
-    },
-
-    navigation: {
-
-        nextEl: ".treat-next",
-
-        prevEl: ".treat-prev",
-
-    },
-
-    pagination: {
-
-        el: ".treatSwiper .swiper-pagination",
-
-        clickable: true,
-
-    },
-
-    breakpoints: {
-
-        0: {
-            slidesPerView: 1,
         },
 
-        576: {
-            slidesPerView: 2,
+        pagination: {
+
+            el: ".swiper-pagination",
+            clickable: true
+
         },
 
-        992: {
-            slidesPerView: 3,
-        },
+        navigation: {
 
-        1200: {
-            slidesPerView: 4,
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+
         }
 
-    }
+    });
 
-});
+}
 
-const testimonialSwiper = new Swiper(".testimonialSwiper", {
+if (document.querySelector(".treatSwiper")) {
 
-    loop: true,
+    new Swiper(".treatSwiper", {
 
-    spaceBetween: 30,
+        loop: true,
 
-    autoplay: {
+        autoplay: {
+            delay: 3000
 
-        delay: 3500,
-
-        disableOnInteraction: false,
-
-    },
-
-    navigation: {
-
-        nextEl: ".testimonial-next",
-
-        prevEl: ".testimonial-prev",
-
-    },
-
-    pagination: {
-
-        el: ".testimonialSwiper .swiper-pagination",
-
-        clickable: true,
-
-    },
-
-    breakpoints: {
-
-        0: {
-            slidesPerView: 1,
         },
 
-        768: {
-            slidesPerView: 2,
+        navigation: {
+
+            nextEl: ".treat-next",
+
+            prevEl: ".treat-prev",
+
         },
 
-        1200: {
-            slidesPerView: 3,
+        pagination: {
+
+            el: ".treatSwiper .swiper-pagination",
+
+            clickable: true,
+
+        },
+
+        breakpoints: {
+
+            0: {
+                slidesPerView: 1,
+            },
+
+            576: {
+                slidesPerView: 2,
+            },
+
+            992: {
+                slidesPerView: 3,
+            },
+
+            1200: {
+                slidesPerView: 4,
+            }
+
         }
 
-    }
+    });
 
-});
+}
+
+if (document.querySelector(".testimonialSwiper")) {
+
+    new Swiper(".testimonialSwiper", {
+
+        loop: true,
+
+        autoplay: {
+            delay: 3500
+        },
+
+
+        navigation: {
+
+            nextEl: ".testimonial-next",
+
+            prevEl: ".testimonial-prev",
+
+        },
+
+        pagination: {
+
+            el: ".testimonialSwiper .swiper-pagination",
+
+            clickable: true,
+
+        },
+
+        breakpoints: {
+
+            0: {
+                slidesPerView: 1,
+            },
+
+            768: {
+                slidesPerView: 2,
+            },
+
+            1200: {
+                slidesPerView: 3,
+            }
+
+        }
+
+    });
+
+}
 
 
 
 const themeButtons = document.querySelectorAll(
-    "#themeToggleDesktop, #themeToggleMobile"
+    `
+#themeToggleDesktop,
+#themeToggleMobile,
+#theme-toggle
+`
 );
 
 const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "dark") {
+
     document.body.classList.add("dark-mode");
+
 }
 
 themeButtons.forEach(button => {
 
     const icon = button.querySelector("i");
 
-    if (document.body.classList.contains("dark-mode")) {
+    if (icon && document.body.classList.contains("dark-mode")) {
+
         icon.classList.replace("fa-moon", "fa-sun");
+
     }
 
     button.addEventListener("click", () => {
@@ -389,6 +400,8 @@ themeButtons.forEach(button => {
         themeButtons.forEach(btn => {
 
             const i = btn.querySelector("i");
+
+            if (!i) return;
 
             if (dark) {
 
@@ -406,9 +419,11 @@ themeButtons.forEach(button => {
 
 });
 
-const rtlButtons = document.querySelectorAll(
-    "#rtlToggleDesktop, #rtlToggleMobile"
-);
+const rtlButtons = document.querySelectorAll(`
+#rtlToggleDesktop,
+#rtlToggleMobile,
+#rtl-toggle
+`);
 
 const savedDir = localStorage.getItem("direction") || "ltr";
 
@@ -418,12 +433,10 @@ rtlButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        const dir =
-            document.documentElement.getAttribute("dir") === "rtl"
-                ? "ltr"
-                : "rtl";
+        const dir = document.documentElement.dir === "rtl"
+            ? "ltr" : "rtl";
 
-        document.documentElement.setAttribute("dir", dir);
+        document.documentElement.dir = dir;
 
         localStorage.setItem("direction", dir);
 
@@ -431,67 +444,45 @@ rtlButtons.forEach(button => {
 
 });
 
-const themeToggle = document.getElementById("theme-toggle");
-const themeIcon = themeToggle.querySelector("i");
-
-themeToggle.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-
-        themeIcon.classList.remove("fa-moon");
-        themeIcon.classList.add("fa-sun");
-
-    } else {
-
-        themeIcon.classList.remove("fa-sun");
-        themeIcon.classList.add("fa-moon");
-
-    }
-
-});
-
-const rtlBtn = document.getElementById("rtl-toggle");
-
-if (rtlBtn) {
-    rtlBtn.addEventListener("click", () => {
-        document.body.classList.toggle("rtl");
-    });
-}
-
-
 
 
 const faqItems = document.querySelectorAll(".faq-item");
 
-faqItems.forEach(item => {
+if (faqItems.length) {
 
-    const question = item.querySelector(".faq-question");
+    faqItems.forEach(item => {
 
-    question.addEventListener("click", () => {
+        const question = item.querySelector(".faq-question");
 
-        faqItems.forEach(faq => {
+        question.addEventListener("click", () => {
 
-            if (faq !== item) {
+            faqItems.forEach(faq => {
 
-                faq.classList.remove("active");
+                if (faq !== item) {
 
-            }
+                    faq.classList.remove("active");
+
+                }
+
+            });
+
+            item.classList.toggle("active");
 
         });
 
-        item.classList.toggle("active");
-
     });
 
-});
+}
 
-document.querySelectorAll(".toggle-password, .register-toggle-password, .register-confirm-password").forEach(button => {
+
+
+document.querySelectorAll(".toggle-password,.register-toggle-password,.register-confirm-password").forEach(button => {
 
     button.addEventListener("click", function () {
 
         const input = this.previousElementSibling;
+
+        if (!input) return;
 
         if (input.type === "password") {
 
@@ -510,29 +501,3 @@ document.querySelectorAll(".toggle-password, .register-toggle-password, .registe
     });
 
 });
-
-document.querySelectorAll(".toggle-password, .register-toggle-password, .register-confirm-password").forEach(button => {
-
-    button.addEventListener("click", function () {
-
-        const input = this.previousElementSibling;
-
-        if (input.type === "password") {
-
-            input.type = "text";
-
-            this.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
-
-        } else {
-
-            input.type = "password";
-
-            this.innerHTML = '<i class="fa-solid fa-eye"></i>';
-
-        }
-
-    });
-
-});
-
-

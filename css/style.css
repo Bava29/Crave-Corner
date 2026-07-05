@@ -5510,6 +5510,183 @@ body.rtl .navbar {
 
 }
 
+/*=========================================
+        RECIPE DNA
+=========================================*/
+
+.recipe-dna {
+
+    background: var(--light-bg);
+    overflow: hidden;
+    position: relative;
+
+}
+
+.recipe-dna-wrapper {
+
+    position: relative;
+    width: 900px;
+    height: 700px;
+    margin: 80px auto;
+
+}
+
+.recipe-center {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 12px solid #fff;
+    outline: 2px dashed rgba(255, 107, 107, .25);
+    outline-offset: 18px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .12);
+
+    transition: .4s;
+
+}
+
+.recipe-center img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.recipe-center:hover {
+
+    transform: translate(-50%, -50%) scale(1.05);
+
+}
+
+.recipe-node {
+
+    position: absolute;
+
+    width: 240px;
+
+    background: #fff;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, .08);
+
+    transition: .35s;
+
+}
+
+.recipe-node:hover {
+
+    transform: translateY(-10px);
+
+}
+
+.recipe-node-icon {
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 107, 107, .10);
+
+}
+
+.recipe-node-icon i {
+
+    font-size: 28px;
+    color: var(--primary-color);
+
+}
+
+.recipe-node h4 {
+
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+
+}
+
+.recipe-node p {
+
+    color: #666;
+    line-height: 1.7;
+
+}
+
+/* Top Card */
+
+.top {
+
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+
+}
+
+/* Left Card */
+
+.left {
+
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+}
+
+/* Right Card */
+
+.right {
+
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+}
+
+/* Bottom Left */
+
+.bottom-left {
+
+    bottom: -60px;
+    left: 200px;
+    z-index: 5;
+
+}
+
+/* Bottom Right */
+
+.bottom-right {
+
+    bottom: -60px;
+    right: 180px;
+    z-index: 5;
+
+}
+
 /*****************************************************************Our Menu Page******************************************************************/
 
 /*=========================================
@@ -9402,10 +9579,10 @@ body.rtl .navbar {
         linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .60)),
         url("../images/hero-2.jpg") center center/cover no-repeat;
 
-    min-height: 100vh;
+    min-height: 82vh;
     display: flex;
     align-items: center;
-    padding-top: 100px;
+    padding: 105px 0 70px;
 
     justify-content: center;
 
@@ -9482,6 +9659,66 @@ body.rtl .navbar {
 
 }
 
+body.about-page .party-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .60)),
+        url("../images/about-banner.jpg") center center/cover no-repeat;
+}
+
+body.beverages-page .party-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .60)),
+        url("../images/beverages-banner.jpg") center center/cover no-repeat;
+}
+
+body.cakes-page .party-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .60)),
+        url("../images/cake-banner.jpg") center center/cover no-repeat;
+}
+
+body.contact-page .party-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .60)),
+        url("../images/contact-banner.jpg") center center/cover no-repeat;
+}
+
+body.ice-cream-page .party-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .60)),
+        url("../images/icecream-banner.jpg") center center/cover no-repeat;
+}
+
+body.locations-page .party-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .60)),
+        url("../images/locations-banner.jpg") center center/cover no-repeat;
+}
+
+body.party-orders-page .party-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .60)),
+        url("../images/party-order-banner.jpg") center center/cover no-repeat;
+}
+
+body.special-combos-page .party-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .60)),
+        url("../images/combo-banner.jpg") center center/cover no-repeat;
+}
+
+body.sundaes-page .party-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .60)),
+        url("../images/sundae-banner.jpg") center center/cover no-repeat;
+}
+
+body.waffles-page .party-hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .60)),
+        url("../images/waffle-1.jpg") center center/cover no-repeat;
+}
+
 /***************************************************************Book Party Page**************************************************************/
 
 /*=========================================
@@ -9492,7 +9729,7 @@ body.rtl .navbar {
 
     position: relative;
 
-    min-height: 70vh;
+    min-height: 62vh;
 
     display: flex;
 
@@ -9604,7 +9841,7 @@ body.rtl .navbar {
 
     .event-banner-area {
 
-        min-height: 70vh;
+        min-height: 62vh;
 
         text-align: center;
 
@@ -10458,6 +10695,8 @@ body.rtl .navbar {
 
     margin-bottom: 25px;
 
+    color: #fff;
+
 }
 
 .info-card ul li {
@@ -11182,7 +11421,9 @@ body.dark-mode .control-btn:hover {
 
     padding: 50px 20px;
 
-    background: linear-gradient(135deg, #FFF7F5, #FFF2EA);
+    background:
+        linear-gradient(rgba(255, 247, 245, .92), rgba(255, 242, 234, .92)),
+        url("../images/order-cta.jpg") center center/cover no-repeat;
 
     position: relative;
 
@@ -11716,7 +11957,9 @@ body.dark-mode .control-btn:hover {
 
     padding: 50px 20px;
 
-    background: linear-gradient(135deg, #FFF7F5, #FFF2EA);
+    background:
+        linear-gradient(rgba(255, 247, 245, .92), rgba(255, 242, 234, .92)),
+        url("../images/home2-cta-bg.jpg") center center/cover no-repeat;
 
     position: relative;
 
@@ -13136,6 +13379,61 @@ body.dark-mode .nav-menu a {
 
 }
 
+/*=========================================
+        RECIPE DNA - DARK MODE
+=========================================*/
+
+body.dark-mode .recipe-dna {
+
+    background: var(--dark-bg);
+
+}
+
+body.dark-mode .recipe-center {
+
+    border-color: #2b2b2b;
+    outline: 2px dashed rgba(255, 107, 107, .35);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .45);
+
+}
+
+body.dark-mode .recipe-node {
+
+    background: var(--dark-card);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .35);
+
+}
+
+body.dark-mode .recipe-node:hover {
+
+    box-shadow: 0 20px 50px rgba(255, 107, 107, .18);
+
+}
+
+body.dark-mode .recipe-node h4 {
+
+    color: #fff;
+
+}
+
+body.dark-mode .recipe-node p {
+
+    color: rgba(255, 255, 255, .75);
+
+}
+
+body.dark-mode .recipe-node-icon {
+
+    background: rgba(255, 107, 107, .18);
+
+}
+
+body.dark-mode .recipe-node-icon i {
+
+    color: var(--primary-color);
+
+}
+
 /******************************************************Rtl mode****************************************************************/
 
 html[dir="rtl"] .navbar {
@@ -13490,6 +13788,51 @@ body.rtl .favorite-menu::after {
     left: -100px;
 }
 
+/*=========================================
+        RECIPE DNA - RTL MODE
+=========================================*/
+
+body.rtl .recipe-dna {
+
+    direction: rtl;
+
+}
+
+body.rtl .top {
+
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+
+}
+
+body.rtl .left {
+
+    left: auto;
+    right: 30px;
+
+}
+
+body.rtl .right {
+
+    right: auto;
+    left: 30px;
+
+}
+
+body.rtl .bottom-left {
+
+    left: auto;
+    right: 180px;
+
+}
+
+body.rtl .bottom-right {
+
+    right: auto;
+    left: 200px;
+
+}
 
 
 
@@ -22795,7 +23138,7 @@ body.rtl .favorite-menu::after {
     /* Hero */
 
     .party-hero {
-        min-height: 90vh;
+        min-height: 78vh;
         padding-top: 90px;
     }
 
@@ -25877,6 +26220,432 @@ select,
         flex-wrap: wrap;
         gap: 20px;
 
+    }
+
+}
+
+/*=========================================
+        RECIPE DNA RESPONSIVE
+=========================================*/
+
+/* Laptop */
+@media (max-width:1200px) {
+
+    .recipe-dna-wrapper {
+
+        width: 100%;
+        max-width: 900px;
+        height: 650px;
+
+    }
+
+    .recipe-center {
+
+        width: 260px;
+        height: 260px;
+
+    }
+
+    .recipe-node {
+
+        width: 220px;
+        padding: 22px;
+
+    }
+
+    .left {
+        left: 40px;
+    }
+
+    .right {
+        right: 40px;
+    }
+
+    .bottom-left {
+        left: 140px;
+        bottom: 30px;
+    }
+
+    .bottom-right {
+        right: 140px;
+        bottom: 30px;
+    }
+
+}
+
+/* Tablet */
+@media (max-width:991px) {
+
+    .recipe-dna-wrapper {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 100%;
+        height: auto;
+
+    }
+
+    .recipe-center {
+
+        position: static;
+        transform: none;
+        margin: 0 auto 20px;
+        order: -1;
+
+        width: 220px;
+        height: 220px;
+
+        grid-column: 1/-1;
+
+    }
+
+    .recipe-node {
+
+        position: static;
+        transform: none;
+        width: 100%;
+        padding: 30px 25px;
+
+    }
+
+    .top,
+    .left,
+    .right,
+    .bottom-left,
+    .bottom-right {
+
+        position: static;
+
+    }
+
+}
+
+/* Mobile */
+@media (max-width:576px) {
+
+    .recipe-dna-wrapper {
+
+        grid-template-columns: 1fr;
+        gap: 25px;
+
+    }
+
+    .recipe-center {
+
+        width: 180px;
+        height: 180px;
+
+    }
+
+    .recipe-node {
+
+        padding: 30px 20px;
+        border-radius: 22px;
+
+    }
+
+    .recipe-node-icon {
+
+        width: 60px;
+        height: 60px;
+
+    }
+
+    .recipe-node-icon i {
+
+        font-size: 24px;
+
+    }
+
+    .recipe-node h4 {
+
+        font-size: 24px;
+        margin-bottom: 10px;
+
+    }
+
+    .recipe-node p {
+
+        font-size: 15px;
+        line-height: 1.7;
+
+    }
+
+}
+
+/*=========================================
+    iPad - Center Last Card
+=========================================*/
+
+@media (min-width:768px) and (max-width:991px) {
+
+    .recipe-grid {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+
+    }
+
+    .recipe-node:last-child {
+
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 320px;
+        width: 100%;
+
+    }
+
+}
+
+/*=========================================
+        iPad Pro (1024px - 1199px)
+=========================================*/
+
+@media (min-width:992px) and (max-width:1199px) {
+
+    .recipe-dna-wrapper {
+
+        width: 100%;
+        max-width: 900px;
+        height: 700px;
+        margin: 70px auto;
+
+    }
+
+    .recipe-center {
+
+        width: 240px;
+        height: 240px;
+
+        left: 50%;
+        top: 52%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .recipe-node {
+
+        width: 210px;
+        padding: 25px 20px;
+
+    }
+
+    .recipe-node h4 {
+
+        font-size: 22px;
+
+    }
+
+    .recipe-node p {
+
+        font-size: 15px;
+        line-height: 1.7;
+
+    }
+
+    /* Top */
+
+    .top {
+
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    /* Left */
+
+    .left {
+
+        left: 90px;
+        top: 52%;
+        transform: translateY(-50%);
+
+    }
+
+    /* Right */
+
+    .right {
+
+        right: 90px;
+        top: 52%;
+        transform: translateY(-50%);
+
+    }
+
+    /* Bottom Left */
+
+    .bottom-left {
+
+        left: 210px;
+        bottom: -50px;
+
+    }
+
+    /* Bottom Right */
+
+    .bottom-right {
+
+        right: 210px;
+        bottom: -50px;
+
+    }
+
+}
+
+/*=========================================
+        MOBILE MENU HEADER
+=========================================*/
+
+.mobile-menu-header {
+
+    display: none;
+
+}
+
+@media (max-width:992px) {
+
+    .mobile-menu-header {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding-bottom: 20px;
+
+        margin-bottom: 20px;
+
+        border-bottom: 1px solid var(--border-color);
+
+    }
+
+    .mobile-menu-header span {
+
+        font-family: var(--heading-font);
+
+        font-size: 22px;
+
+        font-weight: 700;
+
+        color: var(--secondary-color);
+
+    }
+
+    .menu-close {
+
+        width: 42px;
+        height: 42px;
+
+        border-radius: 50%;
+
+        background: var(--light-bg);
+
+        color: var(--secondary-color);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: .3s;
+
+    }
+
+    .menu-close:hover {
+
+        background: var(--primary-color);
+
+        color: #fff;
+
+    }
+
+}
+
+@media (min-width:993px) {
+
+    .mobile-menu-header {
+
+        display: none !important;
+        position: absolute !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+
+    }
+
+}
+
+/*=========================================
+    LOCATION CARD RESPONSIVE FIX
+=========================================*/
+
+@media (max-width: 992px) {
+
+    .location-content {
+        text-align: left !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .location-content h3,
+    .location-content h5,
+    .location-content p,
+    .location-content span {
+        text-align: left !important;
+        width: 100%;
+    }
+
+    .location-content ul {
+        width: 100%;
+        margin: 25px 0 !important;
+    }
+
+    .location-content ul li {
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .location-content ul li i {
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .location-content .primary-btn {
+        margin: 20px 0 0 !important;
+        align-self: flex-start !important;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .logo {
+
+        padding: 4px 0 !important;
+
+    }
+
+    .logo img {
+
+        max-height: 70px;
+
+    }
+
+}
+
+/* Reduce Instagram gap in Mobile */
+@media (max-width: 576px) {
+
+    .instagram-item.instagram-equal {
+        margin-top: 15px !important;
     }
 
 }
